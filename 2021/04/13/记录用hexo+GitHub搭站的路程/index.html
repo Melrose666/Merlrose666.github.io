@@ -10,7 +10,7 @@
     
     
     
-    <title>Hello World | Melrose的破烂小站</title>
+    <title>记录用hexo+GitHub搭站的路程 | Melrose的破烂小站</title>
     <!-- inject:style -->
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <!-- endinject -->
@@ -161,7 +161,7 @@
     <div class="cube-content">
         <div class="cube-left">
             <div class="cube-article">
-    <h1 class="title">Hello World</h1>
+    <h1 class="title">记录用hexo+GitHub搭站的路程</h1>
     
     <div class="cube-article-header">
         <div class="cube-article-date">
@@ -177,19 +177,24 @@
     
     <div class="cube-article-content cube-markdown">
         
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <p>博客采用的是hexo+github搭建，主题选择的是cube（<a target="_blank" rel="noopener" href="https://github.com/ZEROKISEKI/cube-generator">https://github.com/ZEROKISEKI/cube-generator</a>) ，我感觉cube应该是比较好看的那种类型，究极选了好久才选择的主题，选择困难症患者就是在下了，一度换了好几个博客主题，都感觉不好，因为是第一次使用hexo，真的踩了好多坑，在这里记录一下。参考文件（<a target="_blank" rel="noopener" href="https://blog.csdn.net/milletloks/article/details/104445557?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;spm=1001.2101.3001.4242%EF%BC%89">https://blog.csdn.net/milletloks/article/details/104445557?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;spm=1001.2101.3001.4242）</a> ，网上很多都大同小异，这里主要说说自己踩的坑和解决方法。</p>
+<h2 id="提前准备"><a href="#提前准备" class="headerlink" title="提前准备"></a>提前准备</h2><h3 id="Github的库"><a href="#Github的库" class="headerlink" title="Github的库"></a>Github的库</h3><p>首先是要有自己的github，然后新建一个库，这个库的要求是要用自己github的name.github.io</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git@github.com:Melrose666/Merlrose666.github.io.git</span><br></pre></td></tr></table></figure>
+<p>这一段之后有用。</p>
+<h3 id="node-js和hexo的安装"><a href="#node-js和hexo的安装" class="headerlink" title="node.js和hexo的安装"></a>node.js和hexo的安装</h3><p>先下载node.js，然后通过</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
+<p>主要要查看npm有没有，这里我出现的问题是我有node的版本，但是npm却是无法识别的文件，解决方法是把nodejs卸了然后重新下载，然后nodejs里面有个环境要求要通过powershell下载所需要的环境，这边我遇到的问题是下了一半显示我网络错误，直接给我断了，后来通过科学方法解决了问题。<br>hexo的下载就是简单的</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>后面的差不多就算初始化，cd,再install一下就可以了。</p>
+<h3 id="Github-自己的域名"><a href="#Github-自己的域名" class="headerlink" title="Github+自己的域名"></a>Github+自己的域名</h3><p>这边的坑踩的太多了，而且花了很多天，一点点说。</p>
+<h3 id="自己域名"><a href="#自己域名" class="headerlink" title="自己域名"></a>自己域名</h3><p>我选择的是腾讯云，是必须要求实名的，这样dns才帮你解析。还有就是SSL证书一定要申请。 </p>
+<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p>github真的是大头，花了很长时间。<br>首先是SSH Key<br>在Git Bash 中生成id_pub.rsa的公钥之后，要在c盘documents中找到，把它复制下来，在 github的项目中（这时候你的github项目应该有东西了，可以先hexo d上传一下然后你会发现OPEN SSL_read，spawn failed），这些搜一下都有解决，但是一定要在你项目的settings里面找到deploy keys然后把你的公钥加进去，这边要选择allow write，要不然之后hexo d会没有权限。</p>
+<h3 id="CNAME"><a href="#CNAME" class="headerlink" title="CNAME"></a>CNAME</h3><p>特别的，要在你github的code中新建一个CNAME文件，将你的域名放进去，不要加www<br>然后你找不到Custom domain。这里是要你在page中的source中的Branch选择master，然后custom domain就会出现，这边应该是你DNS解析记录添加过的，它应该会自动弹出你的域名，这边的域名根据你的记录填，大概率也是没有www,这时候上面会出现Your site is published at…然后如果你dns解析记录设置错了的话，你会发现custom domain你的域名一直在转圈，会出现both 你的域名都无法dns解析，下面的enforce https 也无法选择，这里就是DNS记录的问题了。</p>
+<h3 id="DNS记录管理"><a href="#DNS记录管理" class="headerlink" title="DNS记录管理"></a>DNS记录管理</h3><p>这里我没有好好去看官方文档，光顾着去找一些博客，然后github的记录一直有问题<br>GitHub给了四个记录值即185.199.1xx.153这边的主机记录要选择@，记录类型要选择A,还要有个www的cname指向你的name.github.io</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ @ A 185.199.1xx.153</span><br><span class="line">$ www CNAME name.github.io </span><br></pre></td></tr></table></figure>
+<p>然后如果出现TLS 1/3什么的就说明已经好了，这个只要等12个小时就好了。<br>这里基本上就好了，基本上hexo clean hexo g hexo d 就可以看自己的博客了。</p>
+<h3 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h3><p>live2d小人很可爱<br>可以装一些插件<br>这里可以参考一些其他的文章。</p>
+<h3 id="废话"><a href="#废话" class="headerlink" title="废话"></a>废话</h3><p>好好写博客从今天开始，至少一年要写一篇吧。。。</p>
 
     </div>
 </div>
@@ -282,7 +287,7 @@
                     <span>1</span>
                 </p>
                 <p class="title">
-                    <a href="/2021/04/13/hello-world/" title="Hello World">Hello World</a>
+                    <a href="/2021/04/13/%E8%AE%B0%E5%BD%95%E7%94%A8hexo+GitHub%E6%90%AD%E7%AB%99%E7%9A%84%E8%B7%AF%E7%A8%8B/" title="记录用hexo+GitHub搭站的路程">记录用hexo+GitHub搭站的路程</a>
                 </p>
             </div>
             
