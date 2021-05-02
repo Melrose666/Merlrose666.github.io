@@ -125,7 +125,7 @@
             -webkit-filter: blur(5px);
         
             z-index: -1;
-            background-image: url('https://w.wallhaven.cc/full/28/wallhaven-281d5y.png');
+            background-image: url('https://w.wallhaven.cc/full/6o/wallhaven-6olgpq.png');
             background-repeat: no-repeat;
             background-position: center -356px;
             background-size: cover;
@@ -134,7 +134,7 @@
 
         header.cube-background.cube-header-background {
             visibility: hidden;
-            background-image: url('https://w.wallhaven.cc/full/28/wallhaven-281d5y.png');
+            background-image: url('https://w.wallhaven.cc/full/6o/wallhaven-6olgpq.png');
             background-position: center -400px;
         }
     </style>
@@ -152,8 +152,8 @@
 
             window.headerModule = {}
             window.headerModule.image = {
-                width: '1900',
-                height: '919'
+                width: '3555',
+                height: '2000'
             }
 
         })(window)
@@ -182,6 +182,7 @@
 <p>编译五个步骤：<br>词法分析——语法分析——语义分析——中间代码生成与优化——代码生成与优化<br>前端：与机器无关，把源程序分解成组成要素和相应的语法结构，通过结构创建源程序的中间表示，同时收集和源程序相关的信息，放到符号表中。<br>后端：与机器相关，根据中间表示和符号表信息构造目标程序。<br>（见书P12编译过程）</p>
 <p>gcc编译过程使用了ccl,as,collect2三个工具，<br>ccl是编译器，将源文件.c编译为.s，（.c-.i-.s）<br>as是汇编器，将.s汇编为.o的目标文件，<br>collect2是链接器，是对于ld命令的封装，将运行时库（CRT）的目标文件（.o）以及所需要的动态链接库（.so）链接到可执行文件<br>gcc默认使用动态链接</p>
 <p>ELF是“可执行可链接格式”，分为三种类型<br>可执行文件（.exec）：经过链接的、可执行的目标文件，（程序）<br>可重定位文件（.rel）：编译成却未链接的目标文件，通常是.o，用于与其他目标文件进行链接以构成可执行文件或动态链接库，通常是一段位置的独立代码（PIC）<br>共享目标文件（.dyn）：动态链接库文件，用于与其他库或可重定位文件构成新的目标文件，或者在可执行文件加载中链接到进程作为代码的一部分。</p>
+<span id="more"></span>
 <p>核心转储文件也是ELF的一种，作为进程意外终止时进程地址空间的转储。</p>
 <p>一般.o为可重定位，ELF 为目标文件<br>目标文件分为两种视角：<br>一是链接视角，通过节来划分<br>二是运行视角，通过段来划分</p>
 <p>从链接视角，通常包含代码（.text）、数据（.data）和BSS（.bss）三个节<br>代码节用于保存可执行的机器指令<br>数据节用于保存已初始化的全局变量和局部静态变量<br>BSS节用于保存未初始化的全局变量和局部静态变量<br>目标文件还应包含一个文件头</p>

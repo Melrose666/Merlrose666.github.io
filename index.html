@@ -125,7 +125,7 @@
             -webkit-filter: blur(5px);
         
             z-index: -1;
-            background-image: url('https://w.wallhaven.cc/full/28/wallhaven-281d5y.png');
+            background-image: url('https://w.wallhaven.cc/full/6o/wallhaven-6olgpq.png');
             background-repeat: no-repeat;
             background-position: center -356px;
             background-size: cover;
@@ -134,7 +134,7 @@
 
         header.cube-background.cube-header-background {
             visibility: hidden;
-            background-image: url('https://w.wallhaven.cc/full/28/wallhaven-281d5y.png');
+            background-image: url('https://w.wallhaven.cc/full/6o/wallhaven-6olgpq.png');
             background-position: center -400px;
         }
     </style>
@@ -152,8 +152,8 @@
 
             window.headerModule = {}
             window.headerModule.image = {
-                width: '1900',
-                height: '919'
+                width: '3555',
+                height: '2000'
             }
 
         })(window)
@@ -183,14 +183,6 @@
 <p>编译五个步骤：<br>词法分析——语法分析——语义分析——中间代码生成与优化——代码生成与优化<br>前端：与机器无关，把源程序分解成组成要素和相应的语法结构，通过结构创建源程序的中间表示，同时收集和源程序相关的信息，放到符号表中。<br>后端：与机器相关，根据中间表示和符号表信息构造目标程序。<br>（见书P12编译过程）</p>
 <p>gcc编译过程使用了ccl,as,collect2三个工具，<br>ccl是编译器，将源文件.c编译为.s，（.c-.i-.s）<br>as是汇编器，将.s汇编为.o的目标文件，<br>collect2是链接器，是对于ld命令的封装，将运行时库（CRT）的目标文件（.o）以及所需要的动态链接库（.so）链接到可执行文件<br>gcc默认使用动态链接</p>
 <p>ELF是“可执行可链接格式”，分为三种类型<br>可执行文件（.exec）：经过链接的、可执行的目标文件，（程序）<br>可重定位文件（.rel）：编译成却未链接的目标文件，通常是.o，用于与其他目标文件进行链接以构成可执行文件或动态链接库，通常是一段位置的独立代码（PIC）<br>共享目标文件（.dyn）：动态链接库文件，用于与其他库或可重定位文件构成新的目标文件，或者在可执行文件加载中链接到进程作为代码的一部分。</p>
-<p>核心转储文件也是ELF的一种，作为进程意外终止时进程地址空间的转储。</p>
-<p>一般.o为可重定位，ELF 为目标文件<br>目标文件分为两种视角：<br>一是链接视角，通过节来划分<br>二是运行视角，通过段来划分</p>
-<p>从链接视角，通常包含代码（.text）、数据（.data）和BSS（.bss）三个节<br>代码节用于保存可执行的机器指令<br>数据节用于保存已初始化的全局变量和局部静态变量<br>BSS节用于保存未初始化的全局变量和局部静态变量<br>目标文件还应包含一个文件头</p>
-<p>ELF头魔术字符（7f 45 4c 46）即字符串“\177ELF”<br>节的信息保存在节头表，表的每个相都是Elf64_Ehdr结构体（节描述符）。节头表是非必须的，在文件头的e_shoff域中<br>.rodata节保存只读数据，如调用printf()使用的”%d\n”<br>BSS节没有CONTENTS属性，在文件中并不存在，只是给变量预留了位置<br>P22常见节</p>
-<p>字符串表的第一个和最后一个字符都是NULL字符，引用字符时只要给出字符偏移即可</p>
-<p>符号表记录了目标文件所用的所有符号信息。通常分为.dynsym和.symtab，后者是前者的子集，.dynsym保存了外部文件的符号，只能在运行时被解析，.symtab保存了本地符号用于调试和链接。<br>目标文件通过符号的索引值使用这个符号，索引值从0开始计数，0没有含义表示未定义的符号。每个符号有符号值即为符号的地址。</p>
-<p>重定位符是将节中的符号引用符号虚拟地址的过程，包含转换信息的数据就算重定位项</p>
-
         
     </article>
     <footer class="cube-excerpt-footer">
@@ -224,16 +216,6 @@
 <p>主要要查看npm有没有，这里我出现的问题是我有node的版本，但是npm却是无法识别的文件，解决方法是把nodejs卸了然后重新下载，然后nodejs里面有个环境要求要通过powershell下载所需要的环境，这边我遇到的问题是下了一半显示我网络错误，直接给我断了，后来通过科学方法解决了问题。<br>hexo的下载就是简单的</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 <p>后面的差不多就算初始化，cd,再install一下就可以了。</p>
-<h3 id="Github-自己的域名"><a href="#Github-自己的域名" class="headerlink" title="Github+自己的域名"></a>Github+自己的域名</h3><p>这边的坑踩的太多了，而且花了很多天，一点点说。</p>
-<h3 id="自己域名"><a href="#自己域名" class="headerlink" title="自己域名"></a>自己域名</h3><p>我选择的是腾讯云，是必须要求实名的，这样dns才帮你解析。还有就是SSL证书一定要申请。 </p>
-<h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p>github真的是大头，花了很长时间。<br>首先是SSH Key<br>在Git Bash 中生成id_pub.rsa的公钥之后，要在c盘documents中找到，把它复制下来，在 github的项目中（这时候你的github项目应该有东西了，可以先hexo d上传一下然后你会发现OPEN SSL_read，spawn failed），这些搜一下都有解决，但是一定要在你项目的settings里面找到deploy keys然后把你的公钥加进去，这边要选择allow write，要不然之后hexo d会没有权限。</p>
-<h3 id="CNAME"><a href="#CNAME" class="headerlink" title="CNAME"></a>CNAME</h3><p>特别的，要在你github的code中新建一个CNAME文件，将你的域名放进去，不要加www<br>然后你找不到Custom domain。这里是要你在page中的source中的Branch选择master，然后custom domain就会出现，这边应该是你DNS解析记录添加过的，它应该会自动弹出你的域名，这边的域名根据你的记录填，大概率也是没有www,这时候上面会出现Your site is published at…然后如果你dns解析记录设置错了的话，你会发现custom domain你的域名一直在转圈，会出现both 你的域名都无法dns解析，下面的enforce https 也无法选择，这里就是DNS记录的问题了。</p>
-<h3 id="DNS记录管理"><a href="#DNS记录管理" class="headerlink" title="DNS记录管理"></a>DNS记录管理</h3><p>这里我没有好好去看官方文档，光顾着去找一些博客，然后github的记录一直有问题<br>GitHub给了四个记录值即185.199.1xx.153这边的主机记录要选择@，记录类型要选择A,还要有个www的cname指向你的name.github.io</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ @ A 185.199.1xx.153</span><br><span class="line">$ www CNAME name.github.io </span><br></pre></td></tr></table></figure>
-<p>然后如果出现TLS 1/3什么的就说明已经好了，这个只要等12个小时就好了。<br>这里基本上就好了，基本上hexo clean hexo g hexo d 就可以看自己的博客了。</p>
-<h3 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h3><p>live2d小人很可爱<br>可以装一些插件<br>这里可以参考一些其他的文章。</p>
-<h3 id="废话"><a href="#废话" class="headerlink" title="废话"></a>废话</h3><p>好好写博客从今天开始，至少一年要写一篇吧。。。</p>
-<!--- more --->
         
     </article>
     <footer class="cube-excerpt-footer">

@@ -125,7 +125,7 @@
             -webkit-filter: blur(5px);
         
             z-index: -1;
-            background-image: url('https://w.wallhaven.cc/full/28/wallhaven-281d5y.png');
+            background-image: url('https://w.wallhaven.cc/full/6o/wallhaven-6olgpq.png');
             background-repeat: no-repeat;
             background-position: center -356px;
             background-size: cover;
@@ -134,7 +134,7 @@
 
         header.cube-background.cube-header-background {
             visibility: hidden;
-            background-image: url('https://w.wallhaven.cc/full/28/wallhaven-281d5y.png');
+            background-image: url('https://w.wallhaven.cc/full/6o/wallhaven-6olgpq.png');
             background-position: center -400px;
         }
     </style>
@@ -152,8 +152,8 @@
 
             window.headerModule = {}
             window.headerModule.image = {
-                width: '1900',
-                height: '919'
+                width: '3555',
+                height: '2000'
             }
 
         })(window)
@@ -187,6 +187,7 @@
 <p>主要要查看npm有没有，这里我出现的问题是我有node的版本，但是npm却是无法识别的文件，解决方法是把nodejs卸了然后重新下载，然后nodejs里面有个环境要求要通过powershell下载所需要的环境，这边我遇到的问题是下了一半显示我网络错误，直接给我断了，后来通过科学方法解决了问题。<br>hexo的下载就是简单的</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
 <p>后面的差不多就算初始化，cd,再install一下就可以了。</p>
+<span id="more"></span>
 <h3 id="Github-自己的域名"><a href="#Github-自己的域名" class="headerlink" title="Github+自己的域名"></a>Github+自己的域名</h3><p>这边的坑踩的太多了，而且花了很多天，一点点说。</p>
 <h3 id="自己域名"><a href="#自己域名" class="headerlink" title="自己域名"></a>自己域名</h3><p>我选择的是腾讯云，是必须要求实名的，这样dns才帮你解析。还有就是SSL证书一定要申请。 </p>
 <h3 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h3><p>github真的是大头，花了很长时间。<br>首先是SSH Key<br>在Git Bash 中生成id_pub.rsa的公钥之后，要在c盘documents中找到，把它复制下来，在 github的项目中（这时候你的github项目应该有东西了，可以先hexo d上传一下然后你会发现OPEN SSL_read，spawn failed），这些搜一下都有解决，但是一定要在你项目的settings里面找到deploy keys然后把你的公钥加进去，这边要选择allow write，要不然之后hexo d会没有权限。</p>
