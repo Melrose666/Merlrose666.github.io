@@ -162,6 +162,42 @@
     <div class="cube-content">
         <div class="cube-left">
             
+<div class="cube-excerpt" id="cube-excerpt-《CTF竞赛权威指南（PWN篇）整理一》">
+    <header class="cube-excerpt-header">
+        <h1><a href="/2021/05/02/%E3%80%8ACTF%E7%AB%9E%E8%B5%9B%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%EF%BC%88PWN%E7%AF%87%EF%BC%89%E6%95%B4%E7%90%86%E4%B8%80%E3%80%8B/">《CTF竞赛权威指南（PWN篇）整理一》</a></h1>
+        <div class="cube-excerpt-header-msg">
+            <div class="cube-excerpt-date">
+                <i class="cube-icon cube-icon-date" aria-hidden="true"></i>
+                2021-05-02
+            </div>
+            <div class="cube-excerpt-tags">
+                <i class="cube-icon cube-icon-tag" aria-hidden="true"></i>
+                
+            </div>
+        </div>
+    </header>
+    <article class="cube-excerpt-entry cube-markdown">
+        
+        
+           <p>源码到可执行文件过程：<br>预处理——编译——汇编——链接</p>
+<p>编译五个步骤：<br>词法分析——语法分析——语义分析——中间代码生成与优化——代码生成与优化<br>前端：与机器无关，把源程序分解成组成要素和相应的语法结构，通过结构创建源程序的中间表示，同时收集和源程序相关的信息，放到符号表中。<br>后端：与机器相关，根据中间表示和符号表信息构造目标程序。<br>（见书P12编译过程）</p>
+<p>gcc编译过程使用了ccl,as,collect2三个工具，<br>ccl是编译器，将源文件.c编译为.s，（.c-.i-.s）<br>as是汇编器，将.s汇编为.o的目标文件，<br>collect2是链接器，是对于ld命令的封装，将运行时库（CRT）的目标文件（.o）以及所需要的动态链接库（.so）链接到可执行文件<br>gcc默认使用动态链接</p>
+<p>ELF是“可执行可链接格式”，分为三种类型<br>可执行文件（.exec）：经过链接的、可执行的目标文件，（程序）<br>可重定位文件（.rel）：编译成却未链接的目标文件，通常是.o，用于与其他目标文件进行链接以构成可执行文件或动态链接库，通常是一段位置的独立代码（PIC）<br>共享目标文件（.dyn）：动态链接库文件，用于与其他库或可重定位文件构成新的目标文件，或者在可执行文件加载中链接到进程作为代码的一部分。</p>
+<p>核心转储文件也是ELF的一种，作为进程意外终止时进程地址空间的转储。</p>
+<p>一般.o为可重定位，ELF 为目标文件<br>目标文件分为两种视角：<br>一是链接视角，通过节来划分<br>二是运行视角，通过段来划分</p>
+<p>从链接视角，通常包含代码（.text）、数据（.data）和BSS（.bss）三个节<br>代码节用于保存可执行的机器指令<br>数据节用于保存已初始化的全局变量和局部静态变量<br>BSS节用于保存未初始化的全局变量和局部静态变量<br>目标文件还应包含一个文件头</p>
+<p>ELF头魔术字符（7f 45 4c 46）即字符串“\177ELF”<br>节的信息保存在节头表，表的每个相都是Elf64_Ehdr结构体（节描述符）。节头表是非必须的，在文件头的e_shoff域中<br>.rodata节保存只读数据，如调用printf()使用的”%d\n”<br>BSS节没有CONTENTS属性，在文件中并不存在，只是给变量预留了位置<br>P22常见节</p>
+<p>字符串表的第一个和最后一个字符都是NULL字符，引用字符时只要给出字符偏移即可</p>
+<p>符号表记录了目标文件所用的所有符号信息。通常分为.dynsym和.symtab，后者是前者的子集，.dynsym保存了外部文件的符号，只能在运行时被解析，.symtab保存了本地符号用于调试和链接。<br>目标文件通过符号的索引值使用这个符号，索引值从0开始计数，0没有含义表示未定义的符号。每个符号有符号值即为符号的地址。</p>
+<p>重定位符是将节中的符号引用符号虚拟地址的过程，包含转换信息的数据就算重定位项</p>
+
+        
+    </article>
+    <footer class="cube-excerpt-footer">
+        <a class="cube-excerpt-more" href="/2021/05/02/%E3%80%8ACTF%E7%AB%9E%E8%B5%9B%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%EF%BC%88PWN%E7%AF%87%EF%BC%89%E6%95%B4%E7%90%86%E4%B8%80%E3%80%8B/">阅读全文</a>
+    </footer>
+</div>
+
 <div class="cube-excerpt" id="cube-excerpt-记录用hexo+GitHub搭站的路程">
     <header class="cube-excerpt-header">
         <h1><a href="/2021/04/13/%E8%AE%B0%E5%BD%95%E7%94%A8hexo+GitHub%E6%90%AD%E7%AB%99%E7%9A%84%E8%B7%AF%E7%A8%8B/">记录用hexo+GitHub搭站的路程</a></h1>
@@ -268,7 +304,7 @@
     
     
     <div class="count">
-        <a class="count articles"><span>1</span>文章</a>
+        <a class="count articles"><span>2</span>文章</a>
         <a class="count tags"><span>0</span>标签</a>
         <a class="count categories"><span>0</span>分类</a>
     </div>
@@ -307,10 +343,23 @@
                     <span>1</span>
                 </p>
                 <p class="title">
-                    <a href="/2021/04/13/%E8%AE%B0%E5%BD%95%E7%94%A8hexo+GitHub%E6%90%AD%E7%AB%99%E7%9A%84%E8%B7%AF%E7%A8%8B/" title="记录用hexo+GitHub搭站的路程">记录用hexo+GitHub搭站的路程</a>
+                    <a href="/2021/05/02/%E3%80%8ACTF%E7%AB%9E%E8%B5%9B%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97%EF%BC%88PWN%E7%AF%87%EF%BC%89%E6%95%B4%E7%90%86%E4%B8%80%E3%80%8B/" title="《CTF竞赛权威指南（PWN篇）整理一》">《CTF竞赛权威指南（PWN篇）整理一》</a>
                 </p>
             </div>
             
+        </li>
+        
+        
+        
+        <li>
+            <div class="normal">
+                <p class="index">
+                    <span>2</span>
+                </p>
+                <p class="title">
+                    <a href="/2021/04/13/%E8%AE%B0%E5%BD%95%E7%94%A8hexo+GitHub%E6%90%AD%E7%AB%99%E7%9A%84%E8%B7%AF%E7%A8%8B/" title="记录用hexo+GitHub搭站的路程">记录用hexo+GitHub搭站的路程</a>
+                </p>
+            </div>
         </li>
         
         
