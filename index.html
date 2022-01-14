@@ -180,8 +180,33 @@
         
         
            <h1 id="windows11搭配WSL2可以很有效的实现Linux虚拟机自由"><a href="#windows11搭配WSL2可以很有效的实现Linux虚拟机自由" class="headerlink" title="windows11搭配WSL2可以很有效的实现Linux虚拟机自由"></a>windows11搭配WSL2可以很有效的实现Linux虚拟机自由</h1><p>WSL2 可以根据官网的安装方法或者根据自己的 wsl1 进行升级。<br>WSL2方法如下：<br>一定要打开适用于Linux的windows子系统和虚拟机平台（在控制面板系统和安全）</p>
-<pre><code>wsl  --install
-</code></pre>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --install</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装kali-linux"><a href="#安装kali-linux" class="headerlink" title="安装kali-linux"></a>安装kali-linux</h2><p>可以直接通过microsoft store装kali</p>
+<h3 id="运行kali-linux"><a href="#运行kali-linux" class="headerlink" title="运行kali-linux"></a>运行kali-linux</h3><p>参见 Kex<a target="_blank" rel="noopener" href="https://www.kali.org/docs/wsl/win-kex/">https://www.kali.org/docs/wsl/win-kex/</a><br>主要</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
+<p>然后</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br><span class="line">dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br></pre></td></tr></table></figure>
+<p>以上操作都需要powershell或者cmd管理员模式运行<br>完成这些操作之后重启</p>
+<p>WSL2如果下载了就是</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --<span class="built_in">set</span>-<span class="keyword">default</span>-version <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>如果是1升级就用</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --<span class="built_in">set</span>-version kali-linux <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>运行kali-linux实现基本操作</p>
+<h4 id="图形化"><a href="#图形化" class="headerlink" title="图形化"></a>图形化</h4><p>装kex</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install -y kali-win-kex</span><br></pre></td></tr></table></figure>
+<p>然后就可以尝试kex启动了</p>
+<p>可能出现kex unable to connect to socket: connection refused(10061)<br>建议参考<a target="_blank" rel="noopener" href="https://github.com/microsoft/WSL/discussions/6675">https://github.com/microsoft/WSL/discussions/6675</a></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line">rm /tmp/.X11-unix</span><br><span class="line">vncserver</span><br><span class="line">kex</span><br></pre></td></tr></table></figure>
+<p>这样应该就可以了还有问题的化自行查看WSL官方github<br>建议用kali 打开使用sudo kex打开图形化界面<br>涉及到root权限的问题</p>
+<h5 id="LxRunoffline实现转移"><a href="#LxRunoffline实现转移" class="headerlink" title="LxRunoffline实现转移"></a>LxRunoffline实现转移</h5><p>WSL默认在C盘就很占用空间没办法实现一个完全体的kali<br>可以使用LxRunoffline实现转移<br>不建议用巧克力安装Lxrunoffline建议使用github最新的开发版<br>[https ://ddosolitary-builds.sourceforge.io/LxRunOffline/LxRunOffline-v3.5.0-11-gfdab71a-msvc.zip](https ://ddosolitary-builds.sourceforge.io/LxRunOffline/LxRunOffline-v3.5.0-11-gfdab71a-msvc.zip)<br>这个版本可以避免大规模出现的<br>Reason: Indicates that the directory trying to be deleted is not empty问题</p>
+<p>在解压的文件下右击打开cmd<br>这里我的尝试是需要用</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\LxRunOffline.exe</span><br></pre></td></tr></table></figure>
+<p>而不是</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LxRunoffline</span><br></pre></td></tr></table></figure>
+<p>可能跟我本身用巧克力安装过lxrunoffline有关</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\LxRunOffline move -n （系统） -d （目录）</span><br></pre></td></tr></table></figure>
+<p>完美实现转移可以直接完全体kali拉起来，ctfer不需要打开虚拟机的快乐。</p>
 
         
     </article>
