@@ -24,7 +24,7 @@
     <updated>2022-01-19T13:17:13.677Z</updated>
     
     
-    <summary type="html">00:01:28 【猛男版】新 宝 岛 12487.2万 77.8万 视频 果厨果厨果</summary>
+    <summary type="html">00:01:28 【猛男版】新 宝 岛 12487.6万 77.8万 视频 果厨果厨果</summary>
     
     
     
@@ -39,20 +39,28 @@
     <updated>2022-01-14T09:32:31.920Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;windows11搭配WSL2可以很有效的实现Linux虚拟机自由&quot;&gt;&lt;a href=&quot;#windows11搭配WSL2可以很有效的实现Linux虚拟机自由&quot; class=&quot;headerlink&quot; title=&quot;windows11搭配WSL2可以很有效的实现Linux虚拟机自由&quot;&gt;&lt;/a&gt;windows11搭配WSL2可以很有效的实现Linux虚拟机自由&lt;/h1&gt;&lt;p&gt;WSL2 可以根据官网的安装方法或者根据自己的 wsl1 进行升级。&lt;br&gt;WSL2方法如下：&lt;br&gt;一定要打开适用于Linux的windows子系统和虚拟机平台（在控制面板系统和安全）&lt;/p&gt;
-&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wsl --install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    <summary type="html">windows11搭配WSL2可以很有效的实现Linux虚拟机自由
+WSL2 可以根据官网的安装方法或者根据自己的 wsl1 进行升级。
+WSL2方法如下：
+一定要打开适用于Linux的windows子系统和虚拟机平台（在控制面板系统和安全）
 
-&lt;h2 id=&quot;安装kali-linux&quot;&gt;&lt;a href=&quot;#安装kali-linux&quot; class=&quot;headerlink&quot; title=&quot;安装kali-linux&quot;&gt;&lt;/a&gt;安装kali-linux&lt;/h2&gt;&lt;p&gt;可以直接通过microsoft store装kali&lt;/p&gt;
-&lt;h3 id=&quot;运行kali-linux&quot;&gt;&lt;a href=&quot;#运行kali-linux&quot; class=&quot;headerlink&quot; title=&quot;运行kali-linux&quot;&gt;&lt;/a&gt;运行kali-linux&lt;/h3&gt;&lt;p&gt;参见 Kex&lt;a href=&quot;https://www.kali.org/docs/wsl/win-kex/&quot;&gt;https://www.kali.org/docs/wsl/win-kex/&lt;/a&gt;&lt;br&gt;主要&lt;/p&gt;
-&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;然后&lt;/p&gt;
-&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;以上操作都需要powershell或者cmd管理员模式运行&lt;br&gt;完成这些操作之后重启&lt;/p&gt;
-&lt;p&gt;WSL2如果下载了就是&lt;/p&gt;
-&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wsl --&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt;-&lt;span class=&quot;keyword&quot;&gt;default&lt;/span&gt;-version &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;如果是1升级就用&lt;/p&gt;
-&lt;figure class=&quot;highlight c&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;wsl --&lt;span class=&quot;built_in&quot;&gt;set&lt;/span&gt;-version kali-linux &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;运行kali-linux实现基本操作&lt;/p&gt;</summary>
+1
+
+
+wsl --install
+
+
+安装kali-linux
+可以直接通过microsoft store装kali
+
+运行kali-linux
+参见 Kexhttps://www.kali.org/docs/wsl/win-kex/
+主要
+
+1
+
+
+Enable-WindowsOptionalFeature -Online -FeatureName</summary>
     
     
     
@@ -67,10 +75,19 @@
     <updated>2021-05-02T13:36:34.774Z</updated>
     
     
-    <summary type="html">&lt;p&gt;源码到可执行文件过程：&lt;br&gt;预处理——编译——汇编——链接&lt;/p&gt;
-&lt;p&gt;编译五个步骤：&lt;br&gt;词法分析——语法分析——语义分析——中间代码生成与优化——代码生成与优化&lt;br&gt;前端：与机器无关，把源程序分解成组成要素和相应的语法结构，通过结构创建源程序的中间表示，同时收集和源程序相关的信息，放到符号表中。&lt;br&gt;后端：与机器相关，根据中间表示和符号表信息构造目标程序。&lt;br&gt;（见书P12编译过程）&lt;/p&gt;
-&lt;p&gt;gcc编译过程使用了ccl,as,collect2三个工具，&lt;br&gt;ccl是编译器，将源文件.c编译为.s，（.c-.i-.s）&lt;br&gt;as是汇编器，将.s汇编为.o的目标文件，&lt;br&gt;collect2是链接器，是对于ld命令的封装，将运行时库（CRT）的目标文件（.o）以及所需要的动态链接库（.so）链接到可执行文件&lt;br&gt;gcc默认使用动态链接&lt;/p&gt;
-&lt;p&gt;ELF是“可执行可链接格式”，分为三种类型&lt;br&gt;可执行文件（.exec）：经过链接的、可执行的目标文件，（程序）&lt;br&gt;可重定位文件（.rel）：编译成却未链接的目标文件，通常是.o，用于与其他目标文件进行链接以构成可执行文件或动态链接库，通常是一段位置的独立代码（PIC）&lt;br&gt;共享目标文件（.dyn）：动态链接库文件，用于与其他库或可重定位文件构成新的目标文件，或者在可执行文件加载中链接到进程作为代码的一部分。&lt;/p&gt;</summary>
+    <summary type="html">源码到可执行文件过程：
+预处理——编译——汇编——链接
+
+编译五个步骤：
+词法分析——语法分析——语义分析——中间代码生成与优化——代码生成与优化
+前端：与机器无关，把源程序分解成组成要素和相应的语法结构，通过结构创建源程序的中间表示，同时收集和源程序相关的信息，放到符号表中。
+后端：与机器相关，根据中间表示和符号表信息构造目标程序。
+（见书P12编译过程）
+
+gcc编译过程使用了ccl,as,collect2三个工具，
+ccl是编译器，将源文件.c编译为.s，（.c-.i-.s）
+as是汇编器，将.s汇编为.o的目标文件，
+collect2是链接器，是对于ld命令的封装，将运行时库（CRT）</summary>
     
     
     
@@ -85,15 +102,7 @@
     <updated>2021-05-02T13:37:33.908Z</updated>
     
     
-    <summary type="html">&lt;p&gt;博客采用的是hexo+github搭建，主题选择的是cube（&lt;a href=&quot;https://github.com/ZEROKISEKI/cube-generator&quot;&gt;https://github.com/ZEROKISEKI/cube-generator&lt;/a&gt;) ，我感觉cube应该是比较好看的那种类型，究极选了好久才选择的主题，选择困难症患者就是在下了，一度换了好几个博客主题，都感觉不好，因为是第一次使用hexo，真的踩了好多坑，在这里记录一下。参考文件（&lt;a href=&quot;https://blog.csdn.net/milletloks/article/details/104445557?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;amp;spm=1001.2101.3001.4242%EF%BC%89&quot;&gt;https://blog.csdn.net/milletloks/article/details/104445557?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;amp;spm=1001.2101.3001.4242）&lt;/a&gt; ，网上很多都大同小异，这里主要说说自己踩的坑和解决方法。&lt;/p&gt;
-&lt;h2 id=&quot;提前准备&quot;&gt;&lt;a href=&quot;#提前准备&quot; class=&quot;headerlink&quot; title=&quot;提前准备&quot;&gt;&lt;/a&gt;提前准备&lt;/h2&gt;&lt;h3 id=&quot;Github的库&quot;&gt;&lt;a href=&quot;#Github的库&quot; class=&quot;headerlink&quot; title=&quot;Github的库&quot;&gt;&lt;/a&gt;Github的库&lt;/h3&gt;&lt;p&gt;首先是要有自己的github，然后新建一个库，这个库的要求是要用自己github的name.github.io&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git@github.com:Melrose666/Merlrose666.github.io.git&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;这一段之后有用。&lt;/p&gt;
-&lt;h3 id=&quot;node-js和hexo的安装&quot;&gt;&lt;a href=&quot;#node-js和hexo的安装&quot; class=&quot;headerlink&quot; title=&quot;node.js和hexo的安装&quot;&gt;&lt;/a&gt;node.js和hexo的安装&lt;/h3&gt;&lt;p&gt;先下载node.js，然后通过&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm -v&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;主要要查看npm有没有，这里我出现的问题是我有node的版本，但是npm却是无法识别的文件，解决方法是把nodejs卸了然后重新下载，然后nodejs里面有个环境要求要通过powershell下载所需要的环境，这边我遇到的问题是下了一半显示我网络错误，直接给我断了，后来通过科学方法解决了问题。&lt;br&gt;hexo的下载就是简单的&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install hexo-cli -g&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;后面的差不多就算初始化，cd,再install一下就可以了。&lt;/p&gt;</summary>
+    <summary type="html">博客采用的是hexo+github搭建，主题选择的是cube（https://github.com/ZEROKISEKI/cube-generator) ，我感觉cube应该是比较好看的那种类型，究极选了好久才选择的主题，选择困难症患者就是在下了，一度换了好几个博客主题，都感觉不好，因为是第一次使用hexo，真的踩了好多坑，在这里记录一下。参考文件（https://blog.csdn.net/milletloks/article/details/104445557?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;</summary>
     
     
     

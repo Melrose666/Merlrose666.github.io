@@ -180,7 +180,7 @@
     <article class="cube-excerpt-entry cube-markdown">
         
         
-           00:01:28 【猛男版】新 宝 岛 12487.2万 77.8万 视频 果厨果厨果
+           00:01:28 【猛男版】新 宝 岛 12487.6万 77.8万 视频 果厨果厨果
         
     </article>
     <footer class="cube-excerpt-footer">
@@ -205,20 +205,28 @@
     <article class="cube-excerpt-entry cube-markdown">
         
         
-           <h1 id="windows11搭配WSL2可以很有效的实现Linux虚拟机自由"><a href="#windows11搭配WSL2可以很有效的实现Linux虚拟机自由" class="headerlink" title="windows11搭配WSL2可以很有效的实现Linux虚拟机自由"></a>windows11搭配WSL2可以很有效的实现Linux虚拟机自由</h1><p>WSL2 可以根据官网的安装方法或者根据自己的 wsl1 进行升级。<br>WSL2方法如下：<br>一定要打开适用于Linux的windows子系统和虚拟机平台（在控制面板系统和安全）</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --install</span><br></pre></td></tr></table></figure>
+           windows11搭配WSL2可以很有效的实现Linux虚拟机自由
+WSL2 可以根据官网的安装方法或者根据自己的 wsl1 进行升级。
+WSL2方法如下：
+一定要打开适用于Linux的windows子系统和虚拟机平台（在控制面板系统和安全）
 
-<h2 id="安装kali-linux"><a href="#安装kali-linux" class="headerlink" title="安装kali-linux"></a>安装kali-linux</h2><p>可以直接通过microsoft store装kali</p>
-<h3 id="运行kali-linux"><a href="#运行kali-linux" class="headerlink" title="运行kali-linux"></a>运行kali-linux</h3><p>参见 Kex<a target="_blank" rel="noopener" href="https://www.kali.org/docs/wsl/win-kex/">https://www.kali.org/docs/wsl/win-kex/</a><br>主要</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</span><br></pre></td></tr></table></figure>
-<p>然后</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</span><br><span class="line">dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</span><br></pre></td></tr></table></figure>
-<p>以上操作都需要powershell或者cmd管理员模式运行<br>完成这些操作之后重启</p>
-<p>WSL2如果下载了就是</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --<span class="built_in">set</span>-<span class="keyword">default</span>-version <span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>如果是1升级就用</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl --<span class="built_in">set</span>-version kali-linux <span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p>运行kali-linux实现基本操作</p>
+1
+
+
+wsl --install
+
+
+安装kali-linux
+可以直接通过microsoft store装kali
+
+运行kali-linux
+参见 Kexhttps://www.kali.org/docs/wsl/win-kex/
+主要
+
+1
+
+
+Enable-WindowsOptionalFeature -Online -FeatureName
         
     </article>
     <footer class="cube-excerpt-footer">
@@ -243,10 +251,19 @@
     <article class="cube-excerpt-entry cube-markdown">
         
         
-           <p>源码到可执行文件过程：<br>预处理——编译——汇编——链接</p>
-<p>编译五个步骤：<br>词法分析——语法分析——语义分析——中间代码生成与优化——代码生成与优化<br>前端：与机器无关，把源程序分解成组成要素和相应的语法结构，通过结构创建源程序的中间表示，同时收集和源程序相关的信息，放到符号表中。<br>后端：与机器相关，根据中间表示和符号表信息构造目标程序。<br>（见书P12编译过程）</p>
-<p>gcc编译过程使用了ccl,as,collect2三个工具，<br>ccl是编译器，将源文件.c编译为.s，（.c-.i-.s）<br>as是汇编器，将.s汇编为.o的目标文件，<br>collect2是链接器，是对于ld命令的封装，将运行时库（CRT）的目标文件（.o）以及所需要的动态链接库（.so）链接到可执行文件<br>gcc默认使用动态链接</p>
-<p>ELF是“可执行可链接格式”，分为三种类型<br>可执行文件（.exec）：经过链接的、可执行的目标文件，（程序）<br>可重定位文件（.rel）：编译成却未链接的目标文件，通常是.o，用于与其他目标文件进行链接以构成可执行文件或动态链接库，通常是一段位置的独立代码（PIC）<br>共享目标文件（.dyn）：动态链接库文件，用于与其他库或可重定位文件构成新的目标文件，或者在可执行文件加载中链接到进程作为代码的一部分。</p>
+           源码到可执行文件过程：
+预处理——编译——汇编——链接
+
+编译五个步骤：
+词法分析——语法分析——语义分析——中间代码生成与优化——代码生成与优化
+前端：与机器无关，把源程序分解成组成要素和相应的语法结构，通过结构创建源程序的中间表示，同时收集和源程序相关的信息，放到符号表中。
+后端：与机器相关，根据中间表示和符号表信息构造目标程序。
+（见书P12编译过程）
+
+gcc编译过程使用了ccl,as,collect2三个工具，
+ccl是编译器，将源文件.c编译为.s，（.c-.i-.s）
+as是汇编器，将.s汇编为.o的目标文件，
+collect2是链接器，是对于ld命令的封装，将运行时库（CRT）
         
     </article>
     <footer class="cube-excerpt-footer">
@@ -271,15 +288,7 @@
     <article class="cube-excerpt-entry cube-markdown">
         
         
-           <p>博客采用的是hexo+github搭建，主题选择的是cube（<a target="_blank" rel="noopener" href="https://github.com/ZEROKISEKI/cube-generator">https://github.com/ZEROKISEKI/cube-generator</a>) ，我感觉cube应该是比较好看的那种类型，究极选了好久才选择的主题，选择困难症患者就是在下了，一度换了好几个博客主题，都感觉不好，因为是第一次使用hexo，真的踩了好多坑，在这里记录一下。参考文件（<a target="_blank" rel="noopener" href="https://blog.csdn.net/milletloks/article/details/104445557?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;spm=1001.2101.3001.4242%EF%BC%89">https://blog.csdn.net/milletloks/article/details/104445557?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&amp;spm=1001.2101.3001.4242）</a> ，网上很多都大同小异，这里主要说说自己踩的坑和解决方法。</p>
-<h2 id="提前准备"><a href="#提前准备" class="headerlink" title="提前准备"></a>提前准备</h2><h3 id="Github的库"><a href="#Github的库" class="headerlink" title="Github的库"></a>Github的库</h3><p>首先是要有自己的github，然后新建一个库，这个库的要求是要用自己github的name.github.io</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git@github.com:Melrose666/Merlrose666.github.io.git</span><br></pre></td></tr></table></figure>
-<p>这一段之后有用。</p>
-<h3 id="node-js和hexo的安装"><a href="#node-js和hexo的安装" class="headerlink" title="node.js和hexo的安装"></a>node.js和hexo的安装</h3><p>先下载node.js，然后通过</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm -v</span><br></pre></td></tr></table></figure>
-<p>主要要查看npm有没有，这里我出现的问题是我有node的版本，但是npm却是无法识别的文件，解决方法是把nodejs卸了然后重新下载，然后nodejs里面有个环境要求要通过powershell下载所需要的环境，这边我遇到的问题是下了一半显示我网络错误，直接给我断了，后来通过科学方法解决了问题。<br>hexo的下载就是简单的</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>后面的差不多就算初始化，cd,再install一下就可以了。</p>
+           博客采用的是hexo+github搭建，主题选择的是cube（https://github.com/ZEROKISEKI/cube-generator) ，我感觉cube应该是比较好看的那种类型，究极选了好久才选择的主题，选择困难症患者就是在下了，一度换了好几个博客主题，都感觉不好，因为是第一次使用hexo，真的踩了好多坑，在这里记录一下。参考文件（https://blog.csdn.net/milletloks/article/details/104445557?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&
         
     </article>
     <footer class="cube-excerpt-footer">
@@ -517,13 +526,13 @@ Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a
 <script src="/js/script.js"></script>
 <!-- endinject -->
 <div class="cube-loading out"></div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":250,"height":500},"mobile":{"show":true},"log":false});</script><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 3,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":250,"height":500},"mobile":{"show":true},"log":false});</script></body>
 </html>
 <!-- 页面点击小红心 -->
 <script type="text/javascript" src="/js/love.js"></script>
