@@ -18,7 +18,9 @@ var url = 'https://goku.ke.com/web/loginUser/info';
 
 var params = 'json=login';
 
-http.open('POST', url, true);
+var referer = 'https://family.ke.com';
+  
+http.open('POST', url, referer, true);
 
 http.withCredentials = true;
 
