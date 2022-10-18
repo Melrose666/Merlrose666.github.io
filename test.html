@@ -1,0 +1,45 @@
+<html>
+
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+<body>
+
+<script>
+
+$.ajaxSetup({
+
+xhrFields:{
+
+withCredentials:true
+
+}
+
+})
+
+$.ajax({
+
+type: "POST",
+
+url: "https://goku.ke.com/web/loginUser/info",
+
+contentType: "application/json",
+
+data : 'json=6login"}',
+
+success: function(data) {
+
+alert(JSON.stringify(data));
+
+},
+
+error: function(msg) {
+
+console.log(msg)
+
+} });
+
+</script>
+
+</body>
+
+</html>
